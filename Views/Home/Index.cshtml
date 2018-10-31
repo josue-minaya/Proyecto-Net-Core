@@ -1,23 +1,22 @@
 ﻿@{
     ViewData["Title"] = "Log In";
 }
-
+ <link rel="stylesheet" href="~/css/index.css">
 
 <div class="weather-box">
-  <div class="weather">
-    <h1>Today</h1>
-    <p>
-      <ul id="city"></ul>
-
-      <ul id="weather-icon" class="longShadow">
-      </ul>
-
-      <ul id="temp"></ul>
-
-      <ul id="tempalt"></ul>
-
-      <ul id="wind"></ul>
-
-      <button type="button" class="btn btn-primary" id="switch-temp" onclick="switchTemp();">°F / °C</button>
+  <div class="weather text-center">
+    <form>
+    <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-6 col-form-label">Usuario</label>
+    <div class="col-sm-4">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Usuario">
+    </div>
+    </div>
+    <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-6 col-form-label">Contraseña</label>
+    <div class="col-sm-4">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Contraseña">
+    </div>
+    </form>      
   </div>
 </div>
