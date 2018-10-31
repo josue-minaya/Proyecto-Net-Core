@@ -1,4 +1,23 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Log In";
 }
 
+
+<div class="weather-box">
+  <div class="weather">
+    <h1>Today</h1>
+    <p>
+      <ul id="city"></ul>
+
+      <ul id="weather-icon" class="longShadow">
+      </ul>
+
+      <ul id="temp"></ul>
+
+      <ul id="tempalt"></ul>
+
+      <ul id="wind"></ul>
+
+      <button type="button" class="btn btn-primary" id="switch-temp" onclick="switchTemp();">°F / °C</button>
+  </div>
+</div>
