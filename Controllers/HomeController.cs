@@ -26,5 +26,11 @@ namespace Proyecto_Net_Core.Controllers
             
             return View();
         }
+
+        public IActionResult Pedidos()
+        {
+            
+            return View();
+        }
     }
 }
