@@ -1,9 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    vertical-align: baseline;
-  }
   
   div {
     position: relative;
@@ -21,37 +15,20 @@
   h1 {
     text-align: center;
   }
+
   
   p .ul {
     text-align: center;
   }
-  
-  #temp,
-  #temp-c,
-  #temp-f,
-  #wind {
-    text-transform: uppercase;
-  }
-  
-  #temp-c {
-    display: none;
-  }
-  
-  #switch-temp {
-    cursor: pointer;
-    cursor: hand;
-  }
-  
-  
-  
+   
   .weather-box {
     border-radius: 14px;
     position: relative;
     margin: 8% auto auto auto;
-    width: 80%;
+    width: 60%;
     height: 40%;
     padding: 40px 20px;
-    display: table;
+    display: block;
     background-color: #fff;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
