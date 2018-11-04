@@ -1,5 +1,4 @@
-  
-  div {
+   div {
     position: relative;
     z-index: 2;
   }
@@ -9,6 +8,7 @@
     color: #000000;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+    margin-top: 8%;
     text-align: center;
   }
   
@@ -25,7 +25,7 @@
     border-radius: 14px;
     position: relative;
     margin: 8% auto auto auto;
-    width: 60%;
+    width: 80%;
     height: 40%;
     padding: 40px 20px;
     display: block;
@@ -54,5 +54,38 @@
   and (max-device-width: 736px) 
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: portrait) { 
+    .col--sm-6 {width: 50%;}
+    body{
+      background-color: #6200EE;
+      margin-top: 16%;
+    }
+    /*Pedidos.cshtml*/
+    #formularioPedidos{
+      background-color: rgb(247, 222, 222);
+      border-radius: 14px;
+      position: relative;
+      margin: 8% auto auto auto;
+      width: 80%;
+      height: 40%;
+      padding: 40px 20px;
+      display: block;
+      background-color: #fff;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+    /*Login*/
+    .weather-box {
+      border-radius: 14px;
+      position: relative;
+      margin: 2% auto auto auto;
+      width: 90%;
+      height: 60%;
+      padding: 40px 20px;
+      display: block;
+      background-color: #fff;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
 
+    footer{
+      color: #fff;
+    }
 }
