@@ -1,31 +1,46 @@
 @{
     ViewData["Title"] = "Ingreso de productos";
 }
-
+<h2>Ingrese producto</h2>
 <div>
-    <form>
+    <form action="" method="post">
+        
         <div class="form-group">
-            <label for="codigo" class="col-sm-6 col-form-label">Codigo</label>
+            <label for="codigo" >Codigo</label>
             <input type="text" class="form-control" id="codigo"  name="codigo">
         </div>
+        
         <div class="form-group">
-            <label for="nombre" class="col-sm-6 col-form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre">
-        </div>
-        <div class="form-group">
-            <label for="precio" class="col-sm-6 col-form-label">Precio</label>
+            <label for="precio" >Precio</label>
             <input type="number" class="form-control" id="inputEmail3" name="precio">
         </div>
         <div class="form-group">
-            <label for="descripcion" class="col-sm-6 col-form-label">Descripcion</label>
-            <input type="text" class="form-control" id="inputEmail3" name="descripcion">
+            <label for="descripcion" >Descripción</label>
+            <textarea type="text" class="form-control" id="inputEmail3" name="descripcion"></textarea>
         </div>
         <div class="form-group">
-            <label for="foto" class="col-sm-6 col-form-label">Foto</label>
+            <label for="foto" >Foto</label>
             <input type="text" class="form-control" id="inputEmail3" name="foto">
         </div>
         <div class="form-group">
-            <button class="btn btn-primary" name="IngresarProducto">Ingresar Producto</button>
+            <label for="cantidad" >Cantidad de producto</label>
+            <input type="text" class="form-control" id="cantidad" name="cantidad">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Categoria</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            </select>
+        </div>
+        <br>
+        <br>
+        <div class="form-group text-center">
+            <button class="btn btn-primary " style="width:170px " name="IngresarProducto">Ingresar Producto</button>
         </div>
     </form>
 </div>

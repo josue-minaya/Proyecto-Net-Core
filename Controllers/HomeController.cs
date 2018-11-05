@@ -32,5 +32,16 @@ namespace Proyecto_Net_Core.Controllers
             
             return View();
         }
+        public IActionResult IngresoEmpleado()
+        {
+            
+            return View();
+        }
+        public IActionResult AsignacionPuesto()
+        {
+            
+            return View();
+        }
+        
     }
 }

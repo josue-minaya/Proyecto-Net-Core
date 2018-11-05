@@ -2,18 +2,22 @@
     position: relative;
     z-index: 2;
   }
+  footer{
+    text-align: center;
+  }
   
   body {
-    background-color: #0D47A1;
+    background-color: rgba(16, 40, 147, 0.65);
     color: #000000;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     margin-top: 8%;
-    text-align: center;
+    
   }
   
-  h1 {
+  h1 ,h2{
     text-align: center;
+    padding: 15px;
   }
 
   
@@ -50,13 +54,13 @@
   }  
 
   @media only screen 
-  and (min-device-width: 414px) 
+  and (min-device-width: 375px) 
   and (max-device-width: 736px) 
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: portrait) { 
     .col-sm-6 {width: 50%;}
     body{
-      background-color: #6200EE;
+      background-image: rgba(16, 40, 147, 0.65);
       margin-top: 16%;
     }
     /*Pedidos.cshtml*/
@@ -85,7 +89,9 @@
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     }
 
+    
     footer{
       color: #fff;
+      text-align: center;
     }
 }
