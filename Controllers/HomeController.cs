@@ -42,6 +42,20 @@ namespace Proyecto_Net_Core.Controllers
             
             return View();
         }
+        [HttpPost]
+        public IActionResult IngresoEmpleado(Empleado e)
+        {
+            
+          if (ModelState.IsValid)
+            {
+                _context.Add(e);
+                _context.SaveChanges();
+
+                return RedirectToAction("AsignacionPuesto");
+            }
+            return View(e);
+        }
+        
         public IActionResult AsignacionPuesto()
         {
             
