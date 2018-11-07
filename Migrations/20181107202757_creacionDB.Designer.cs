@@ -8,7 +8,7 @@ using Proyecto_Net_Core.Models;
 namespace ProyectoNetCore.Migrations
 {
     [DbContext(typeof(VentasContext))]
-    [Migration("20181107201113_creacionDB")]
+    [Migration("20181107202757_creacionDB")]
     partial class creacionDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

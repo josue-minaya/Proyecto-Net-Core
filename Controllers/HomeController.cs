@@ -15,10 +15,23 @@ namespace Proyecto_Net_Core.Controllers
         {
             this._context=context;
         }
-        public IActionResult Index()
-        {
-            
+
+        public IActionResult Index(){
             return View();
+        }
+        
+        [HttpPost]
+         public IActionResult Index(Empleado emp)
+        {
+            if (ModelState.IsValid) {
+            var empleado = _context.Empleado.FirstOrDefault
+                           (e => e.EmpleadoId == emp.EmpleadoId 
+                           && e.password == emp.password);
+            if(empleado.nombre_puesto=="Cajero"){
+                return RedirectToAction("Pedidos"); 
+             }
+            }
+            return View(emp);
         }
         public IActionResult IngresoProducto()
         {
