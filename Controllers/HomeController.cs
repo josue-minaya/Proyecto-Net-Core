@@ -10,6 +10,11 @@ namespace Proyecto_Net_Core.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly VentasContext _context;
+        public HomeController(VentasContext context)
+        {
+            this._context=context;
+        }
         public IActionResult Index()
         {
             
