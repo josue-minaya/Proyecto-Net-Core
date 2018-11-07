@@ -64,7 +64,7 @@
       margin-top: 16%;
     }
     /*Pedidos.cshtml*/
-    #formularioPedidos{
+    .formulario{
       background-color: rgb(247, 222, 222);
       border-radius: 14px;
       position: relative;
