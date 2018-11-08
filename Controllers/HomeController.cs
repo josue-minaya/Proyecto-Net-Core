@@ -30,8 +30,10 @@ namespace Proyecto_Net_Core.Controllers
             if(empleado.nombre_puesto=="Cajero"){
                 return RedirectToAction("Pedidos"); 
              }
-            }
-            return View(emp);
+            } 
+            
+            return View("Index", emp);     
+           
         }
         public IActionResult IngresoProducto()
         {
