@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Proyecto_Net_Core.Models;
 
@@ -51,7 +52,9 @@ namespace Proyecto_Net_Core.Controllers
                 _context.Add(pr);
                 _context.SaveChanges();
 
-                return RedirectToAction("AsignacionVendedor");
+                
+            
+                return RedirectToAction("IngresoProducto");
             }
             return View("IngresoProducto",pr);
             
@@ -75,13 +78,26 @@ namespace Proyecto_Net_Core.Controllers
             return View(v);
         }
         
-        public IActionResult BusquedaProducto()
+        public IActionResult BusquedaProducto(BuscarP b)
         {
-            var producto=_context.Producto.Include(x=>x.Categoria)
-                                            .OrderByDescending(b=>b.ProductoId)
-                                         .ToList();
+             if (ModelState.IsValid)
+            {
+                return RedirectToAction("Busquedaproducto");
+            }
             
-            return View(producto);
+            return View(b);
+        }
+
+        [HttpPost]
+        public IActionResult buscar(Producto p)
+
+        {   
+            return View();
+        }
+        public IActionResult DetalleProducto()
+        {
+            
+            return View();
         }
 
         public IActionResult Pedidos()

@@ -1,0 +1,59 @@
+@{
+    ViewData["Title"] = "Detalle Producto";
+}
+@Html.ValidationSummary()
+<form class="formulario" asp-action="buscarProducto" method="POST">
+        
+            <div class="form-group">
+            <label for="foto" >Datos del producto</label>
+            <div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                             <th scope="col"class>Especificaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row"></td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                             <th scope="col"class>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row"></td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                             <th scope="col"class>Stock</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row"></td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                             <th scope="col"class>Foto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        
+        <div class="form-group text-center">
+            <button class="btn btn-success" style="width:170px " name="IngresarProducto">Agregar a carrito</button>
+        </div>
+    </form>
