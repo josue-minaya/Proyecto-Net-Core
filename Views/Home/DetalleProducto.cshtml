@@ -1,21 +1,33 @@
+@model Producto
+
 @{
     ViewData["Title"] = "Detalle Producto";
 }
 @Html.ValidationSummary()
-<form class="formulario" asp-action="buscarProducto" method="POST">
+<form class="formulario" asp-action="Pedidos" method="GET">
         
             <div class="form-group">
             <label for="foto" >Datos del producto</label>
             <div>
                 <table class="table table-striped">
+                    <thead style="display:none">
+                        <tr>
+                             <th scope="col">Id</th>
+                        </tr>
+                    </thead>
+                    <tbody style="display:none">
+                        <tr>
+                            <td scope="row" name="id">@Model.ProductoId</td>
+                        </tr>
+                    </tbody>
                     <thead>
                         <tr>
-                             <th scope="col"class>Especificaciones</th>
+                             <th scope="col">Especificaciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td scope="row"></td>
+                            <td scope="row">@Model.especificaciones</td>
                         </tr>
                     </tbody>
                     <thead>
@@ -25,7 +37,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td scope="row"></td>
+                            <td scope="row">@Model.precio</td>
                         </tr>
                     </tbody>
                     <thead>
@@ -35,7 +47,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td scope="row"></td>
+                            <td scope="row">@Model.stock</td>
                         </tr>
                     </tbody>
                     <thead>
@@ -45,7 +57,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td scope="row"></td>
+                            <td scope="row">@Model.foto</td>
                         </tr>
                     </tbody>
                 </table>
@@ -54,6 +66,6 @@
         
         
         <div class="form-group text-center">
-            <button class="btn btn-success" style="width:170px " name="IngresarProducto">Agregar a carrito</button>
+            <button class="btn btn-success" style="width:170px " tyoe="submit" name="IngresarProducto">Agregar a carrito</button>
         </div>
     </form>

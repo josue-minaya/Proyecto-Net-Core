@@ -39,11 +39,17 @@ namespace ProyectoNetCore.Migrations
                     b.Property<int>("CategoriaId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("nombre");
+                    b.Property<string>("nombre")
+                        .IsRequired();
 
                     b.HasKey("CategoriaId");
 
                     b.ToTable("Categoria");
+
+                    b.HasData(
+                        new { CategoriaId = 1, nombre = "Refrigeradora" },
+                        new { CategoriaId = 2, nombre = "Cocina" }
+                    );
                 });
 
             modelBuilder.Entity("Proyecto_Net_Core.Models.Empleado", b =>
@@ -51,17 +57,22 @@ namespace ProyectoNetCore.Migrations
                     b.Property<int>("EmpleadoId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("apellido");
+                    b.Property<string>("apellido")
+                        .IsRequired();
 
-                    b.Property<string>("direccion");
+                    b.Property<string>("direccion")
+                        .IsRequired();
 
                     b.Property<int>("dni");
 
-                    b.Property<string>("nombre");
+                    b.Property<string>("nombre")
+                        .IsRequired();
 
-                    b.Property<string>("nombre_puesto");
+                    b.Property<string>("nombre_puesto")
+                        .IsRequired();
 
-                    b.Property<string>("password");
+                    b.Property<string>("password")
+                        .IsRequired();
 
                     b.Property<int>("telefono");
 
@@ -79,7 +90,8 @@ namespace ProyectoNetCore.Migrations
 
                     b.Property<int>("cantidad");
 
-                    b.Property<string>("codproducto");
+                    b.Property<string>("codproducto")
+                        .IsRequired();
 
                     b.Property<float>("precio");
 
@@ -97,11 +109,13 @@ namespace ProyectoNetCore.Migrations
 
                     b.Property<int>("VendedorId");
 
-                    b.Property<string>("fecha");
+                    b.Property<string>("fecha")
+                        .IsRequired();
 
                     b.Property<float>("monto");
 
-                    b.Property<string>("nombre");
+                    b.Property<string>("nombre")
+                        .IsRequired();
 
                     b.HasKey("Pedido_encabezadoId");
 
@@ -116,7 +130,8 @@ namespace ProyectoNetCore.Migrations
 
                     b.Property<string>("ProductoId");
 
-                    b.Property<string>("tipoc");
+                    b.Property<string>("tipoc")
+                        .IsRequired();
 
                     b.HasKey("Pedido_encabezadoId", "ProductoId");
 
@@ -132,7 +147,8 @@ namespace ProyectoNetCore.Migrations
 
                     b.Property<int>("CategoriaId");
 
-                    b.Property<string>("especificaciones");
+                    b.Property<string>("especificaciones")
+                        .IsRequired();
 
                     b.Property<string>("foto");
 
@@ -172,7 +188,8 @@ namespace ProyectoNetCore.Migrations
 
                     b.Property<int>("Pedido_encabezadoId");
 
-                    b.Property<string>("fecha");
+                    b.Property<string>("fecha")
+                        .IsRequired();
 
                     b.Property<int>("numboleta");
 

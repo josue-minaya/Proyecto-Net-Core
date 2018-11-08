@@ -5,15 +5,15 @@
 @Html.ValidationSummary()
 <div>
     <h1>Busqueda de Productos</h1>
-    <form asp-action="buscar" method="POST" class="formulario">
+    <form asp-action="DetalleProducto" method="GET" class="formulario">
         <div class="form-group formulario">
             <label for="codigo">Codigo de producto</label>
-            <input type="text" class="form-control" id="codigo"  name="ProductoId">
+            <input type="text" class="form-control" id="codigo"  name="Id">
         </div>
         <br>
         
         <div class="form-group text-center">
-            <button class="btn btn-secondary" style="width:170px " name="IngresarProducto">Buscar</button>
+            <button type="submit" class="btn btn-secondary" style="width:170px " name="IngresarProducto">Buscar</button>
         </div>
     </form>
     

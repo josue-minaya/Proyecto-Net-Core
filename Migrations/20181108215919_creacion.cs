@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProyectoNetCore.Migrations
 {
-    public partial class creacionDB : Migration
+    public partial class creacion : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,7 @@ namespace ProyectoNetCore.Migrations
                 {
                     CategoriaId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    nombre = table.Column<string>(nullable: true)
+                    nombre = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -26,13 +26,13 @@ namespace ProyectoNetCore.Migrations
                 {
                     EmpleadoId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    nombre = table.Column<string>(nullable: true),
-                    apellido = table.Column<string>(nullable: true),
+                    nombre = table.Column<string>(nullable: false),
+                    apellido = table.Column<string>(nullable: false),
                     dni = table.Column<int>(nullable: false),
-                    direccion = table.Column<string>(nullable: true),
+                    direccion = table.Column<string>(nullable: false),
                     telefono = table.Column<int>(nullable: false),
-                    nombre_puesto = table.Column<string>(nullable: true),
-                    password = table.Column<string>(nullable: true)
+                    nombre_puesto = table.Column<string>(nullable: false),
+                    password = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -45,7 +45,7 @@ namespace ProyectoNetCore.Migrations
                 {
                     ProductoId = table.Column<string>(nullable: false),
                     foto = table.Column<string>(nullable: true),
-                    especificaciones = table.Column<string>(nullable: true),
+                    especificaciones = table.Column<string>(nullable: false),
                     stock = table.Column<int>(nullable: false),
                     precio = table.Column<float>(nullable: false),
                     CategoriaId = table.Column<int>(nullable: false)
@@ -108,9 +108,9 @@ namespace ProyectoNetCore.Migrations
                 {
                     Pedido_encabezadoId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    fecha = table.Column<string>(nullable: true),
+                    fecha = table.Column<string>(nullable: false),
                     monto = table.Column<float>(nullable: false),
-                    nombre = table.Column<string>(nullable: true),
+                    nombre = table.Column<string>(nullable: false),
                     VendedorId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -132,7 +132,7 @@ namespace ProyectoNetCore.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     cantidad = table.Column<int>(nullable: false),
                     precio = table.Column<float>(nullable: false),
-                    codproducto = table.Column<string>(nullable: true),
+                    codproducto = table.Column<string>(nullable: false),
                     Pedido_encabezadoId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -152,7 +152,7 @@ namespace ProyectoNetCore.Migrations
                 {
                     ProductoId = table.Column<string>(nullable: false),
                     Pedido_encabezadoId = table.Column<int>(nullable: false),
-                    tipoc = table.Column<string>(nullable: true)
+                    tipoc = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -178,7 +178,7 @@ namespace ProyectoNetCore.Migrations
                     VentaId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     numboleta = table.Column<int>(nullable: false),
-                    fecha = table.Column<string>(nullable: true),
+                    fecha = table.Column<string>(nullable: false),
                     CajeroId = table.Column<int>(nullable: false),
                     Pedido_encabezadoId = table.Column<int>(nullable: false)
                 },
@@ -198,6 +198,16 @@ namespace ProyectoNetCore.Migrations
                         principalColumn: "Pedido_encabezadoId",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Categoria",
+                columns: new[] { "CategoriaId", "nombre" },
+                values: new object[] { 1, "Refrigeradora" });
+
+            migrationBuilder.InsertData(
+                table: "Categoria",
+                columns: new[] { "CategoriaId", "nombre" },
+                values: new object[] { 2, "Cocina" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Cajero_EmpleadoId",

@@ -45,21 +45,36 @@ namespace Proyecto_Net_Core.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult IngresoProductos(Producto pr)
+        public IActionResult IngresoProducto(Producto pr)
         {
              if (ModelState.IsValid)
             {
                 _context.Add(pr);
                 _context.SaveChanges();
-
-                
             
                 return RedirectToAction("IngresoProducto");
             }
-            return View("IngresoProducto",pr);
+            return View(pr);
             
         }
        
+        public IActionResult AsignacionCajero()
+        {
+            
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AsignacionCajero(Cajero c)
+        {
+             if (ModelState.IsValid)
+            {
+                _context.Add(c);
+                _context.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            return View(c);
+        }
         public IActionResult AsignacionVendedor()
         {
             
@@ -76,34 +91,6 @@ namespace Proyecto_Net_Core.Controllers
                 return RedirectToAction("AsignacionVendedor");
             }
             return View(v);
-        }
-        
-        public IActionResult BusquedaProducto(BuscarP b)
-        {
-             if (ModelState.IsValid)
-            {
-                return RedirectToAction("Busquedaproducto");
-            }
-            
-            return View(b);
-        }
-
-        [HttpPost]
-        public IActionResult buscar(Producto p)
-
-        {   
-            return View();
-        }
-        public IActionResult DetalleProducto()
-        {
-            
-            return View();
-        }
-
-        public IActionResult Pedidos()
-        {
-            
-            return View();
         }
         public IActionResult IngresoEmpleado()
         {
@@ -124,23 +111,44 @@ namespace Proyecto_Net_Core.Controllers
             return View(e);
         }
         
-        public IActionResult AsignacionCajero()
+        public IActionResult BusquedaProducto( )
         {
+             
             
             return View();
         }
-        [HttpPost]
-        public IActionResult AsignacionCajero(Cajero c)
-        {
-             if (ModelState.IsValid)
-            {
-                _context.Add(c);
-                _context.SaveChanges();
 
-                return RedirectToAction("Index");
+        
+        public IActionResult DetalleProducto(ViewModel v)
+        {
+             if (!ModelState.IsValid)
+            {
+                return RedirectToAction("BusquedaProducto");
+                
             }
-            return View(c);
+        
+            var producto=_context.Producto.FirstOrDefault(q=>q.ProductoId==v.Id);           
+            return View(producto);
         }
+
+
+
+
+
+
+
+
+
+
+
+
+        public IActionResult Pedidos(ViewModel2 p)
+        {
+          
+            return View();
+        }
+        
+       
        
         
         

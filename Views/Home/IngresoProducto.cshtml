@@ -1,19 +1,20 @@
+@model Producto
 @{
     ViewData["Title"] = "Ingreso de productos";
 }
 @Html.ValidationSummary()
 <h2>Ingrese producto</h2>
 <div>
-    <form  asp-action="IngresoProductos" method="POST">
+    <form  asp-action="IngresoProducto" method="POST">
         
         <div class="form-group">
             <label for="codigo" >Codigo</label>
-            <input type="text" class="form-control" id="codigo"  name="ProductoId">
+            <input type="text" class="form-control" id="codigo"  asp-for="ProductoId">
         </div>
         
         <div class="form-group">
             <label for="precio" >Precio</label>
-            <input type="float" class="form-control" id="precio" name="precio">
+            <input type="decimal" class="form-control" id="precio" name="precio">
         </div>
         <div class="form-group">
             <label for="descripcion" >Descripción</label>
@@ -41,18 +42,10 @@
         <br>
         <br>
         
-<!-- Small modal -->
+
 <div class="form-group text-center">
-        <button type="button" class="btn btn-primary text-justify" data-toggle="modal" 
-                         data-target=".bd-example-modal-sm">Ingrese producto</button>
+        <button type="submit" class="btn btn-primary text-justify" >Ingrese producto</button>
 </div>
-        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" 
-                        aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-            Regitro exitoso
-            </div>
-        </div>
-        </div>
+        
     </form>
 </div>

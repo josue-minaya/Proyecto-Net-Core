@@ -3,10 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Proyecto_Net_Core.Models
 {
-    public class BuscarP
+    public class ViewModel2
     {
         [Required]
-        public int codigo { get; set; }
+        public string id { get; set; }
        
     }
 }
