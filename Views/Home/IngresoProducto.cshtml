@@ -4,7 +4,7 @@
 @Html.ValidationSummary()
 <h2>Ingrese producto</h2>
 <div>
-    <form  action="IngresoProductos" method="POST">
+    <form  asp-action="IngresoProductos" method="POST">
         
         <div class="form-group">
             <label for="codigo" >Codigo</label>
@@ -31,11 +31,12 @@
         <div class="form-group">
             <label for="exampleFormControlSelect1">Categoria</label>
             <select class="form-control" id="exampleFormControlSelect1" name="CategoriaId">
-                <option value=1>Refrigeradoras</option>
-                <option value=2>Cocinas</option>
-                <option value=3>Microondas</option>
+                <option value="1">Refrigeradoras</option>
+                <option value="2">Cocinas</option>
+                <option value="3">Microondas</option>
                 
             </select>
+            
         </div>
         <br>
         <br>

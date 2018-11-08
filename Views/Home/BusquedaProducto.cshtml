@@ -4,42 +4,61 @@
 @Html.ValidationSummary()
 <div>
     <h1>Busqueda de Productos</h1>
-    <form class="formulario">
-        <div class="form-group">
-            <label for="codigo" class="col-sm-6 col-form-label">Codigo</label>
-            <input type="text" class="form-control" id="codigo"  name="codigo">
+    
+        <div class="form-group formulario">
+            <label for="codigo">Codigo de producto</label>
+            <input type="text" class="form-control" id="codigo"  name="ProductoId">
         </div>
+        <br>
+        
         <div class="form-group text-center">
             <button class="btn btn-secondary" style="width:170px " name="IngresarProducto">Buscar</button>
         </div>
+        
+    <form class="formulario" action="buscarProducto" method="POST">
+        
         <div class="form-group">
-            <label for="foto" class="col-sm-6 col-form-label"></label>
+            <label for="foto" >Datos del producto</label>
             <div>
-                <table class="table table-bordered text-center">
+                <table class="table table-hover">
                     <thead>
                         <tr>
-                        <th class="table-success" scope="col">Especificaciones</th>
-                        <th class="table-success" scope="col">Stock</th>
-                        <th class="table-success" scope="col">Precio</th>
+                             <th scope="col"class>Especificaciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                        <td class="table-secondary">a</td>
-                        <td class="table-secondary">a</td>
-                        <td class="table-secondary">a</td>
+                            <td scope="row"></td>
                         </tr>
                     </tbody>
-                </table>
-                <table class="table table-bordered text-center">
                     <thead>
                         <tr>
-                        <th class="table-success" scope="col">Foto</th>
+                             <th scope="col"class>Precio</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                        <td class="table-secondary">a</td>
+                            <td scope="row"></td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                             <th scope="col"class>Stock</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row"></td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                             <th scope="col"class>Foto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -49,4 +68,13 @@
             <button class="btn btn-success" style="width:170px " name="IngresarProducto">Agregar a carrito</button>
         </div>
     </form>
+    @foreach(var banda in Model) {
+    <h2>@banda.Nombre (@banda.Abreviacion)</h2>
+    <img src="@banda.Foto" width="300" />
+    <h3>Lista de albumes</h3>
+
+    @foreach(var a in banda.Albumes) {
+        <p>@a.Nombre</p>
+    }
+}
 </div>

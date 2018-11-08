@@ -23,6 +23,16 @@ namespace Proyecto_Net_Core.Models
             .WithMany(c=>c.Pedido_Productos)
             .HasForeignKey(pc=>pc.ProductoId);
 
+            modelbuilder.Entity<Categoria>().HasData(
+                new Categoria{
+                    CategoriaId=1,
+                    nombre="Refrigeradora",
+                },
+                new Categoria{
+                    CategoriaId=2,
+                    nombre="Cocina",
+                }
+            );
             
         }
         public DbSet<Categoria> Categoria { get; set; }

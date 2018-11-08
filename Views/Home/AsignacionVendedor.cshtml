@@ -3,7 +3,7 @@
 }
 @Html.ValidationSummary()
 <h2>Asignar Vendedor</h2>
-<form action="AsignacionVendedor" method="POST">
+<form asp-action="AsignacionVendedor" method="POST">
     <div class="form-group mt-3">
         <label for="idv" class="idv">Id vendedor</label>
         <input type="number" class="form-control" id="idv"  name="VendedorId">

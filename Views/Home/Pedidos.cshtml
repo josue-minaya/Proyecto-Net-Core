@@ -4,36 +4,30 @@
 @Html.ValidationSummary()
 <form class="formulario">
   <h5 class="text-left">Pedidos</h5>
-  <div class="form-row">
-    <div class="col">
-     <label for="formGroupExampleInput">Codigo</label>
-      <input type="text" class="form-control"><br> 
-      <input type="text" class="form-control"><br> 
-      <input type="text" class="form-control"><br>
-      <input type="text" class="form-control">
-    </div>
-    <div class="col">
-      <label for="formGroupExampleInput">Precio</label>
-      <input type="text" class="form-control"><br>    
-      <input type="text" class="form-control"><br> 
-      <input type="text" class="form-control"><br>
-      <input type="text" class="form-control">
-    </div>
-    <div class="col">
-      <label for="formGroupExampleInput">Cantidad</label>  
-      <input type="text" class="form-control"><br> 
-      <input type="text" class="form-control"><br> 
-      <input type="text" class="form-control"><br>
-      <input type="text" class="form-control">
-    </div>    
-    <div class="col-12">
-    <br>
-    <label for="inputAddress">Nombre del Cliente</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="Nombre y Apellidos">
-    </div>
+  <table>
+     <thead>
+        <tr>
+          <th scope="col"class>#</th>
+          <th scope="col"class>Cod</th>
+          <th scope="col"class>Precio</th>
+          <th scope="col"class>Cantidad</th>
+       </tr>
+    </thead>
+    @foreach(var productos in Model){
+      <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+      </tbody>
+     
+    }
+    
     <div class="col">
         <br>
         <button class="btn btn-success text-center" name="Enviar">Enviar</button>
     </div>
-    </div>
+  </table>
 </form>
