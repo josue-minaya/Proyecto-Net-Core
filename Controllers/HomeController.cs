@@ -27,13 +27,15 @@ namespace Proyecto_Net_Core.Controllers
             var empleado = _context.Empleado.FirstOrDefault
                            (e => e.EmpleadoId == emp.EmpleadoId 
                            && e.password == emp.password);
-            if(empleado.nombre_puesto=="Cajero"){
-                return RedirectToAction("Pedidos"); 
-             }
+                if(empleado==null){
+                    return RedirectToAction("IngresoProducto");  
+                } else {
+                     if(empleado.nombre_puesto=="Cajero"){
+                        return RedirectToAction("IngresoProducto"); 
+                    }  
+                }  
             } 
-            
-            return View("Index", emp);     
-           
+            return View();
         }
         public IActionResult IngresoProducto()
         {
