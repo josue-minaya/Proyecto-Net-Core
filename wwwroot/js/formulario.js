@@ -14,6 +14,9 @@ $(document).ready(function(){
             $("#idv").hide();
             $(".ingresar").hide();
             $(".idv").hide();
+            $("#sueldov").hide();
+            $(".sueldov").hide();
+            
                   
            
        });    
@@ -28,8 +31,10 @@ $(document).ready(function(){
             $("#idv").show();
             $(".idv").show();
             $(".ingresar").show();
-            $("#sueldo").show();
-            $(".sueldo").show();
+            $("#sueldov").show();
+            $(".sueldov").show();
+            $("#sueldo").hide();
+            $(".sueldo").hide();
             $("#ide").show();
             $(".ide").show();
         });
@@ -48,6 +53,8 @@ $(document).ready(function(){
             $(".ingresar").show();
             $(".ide").show();
             $("#ide").show();
+            $("#sueldov").hide();
+            $(".sueldov").hide();
         });
     
 });

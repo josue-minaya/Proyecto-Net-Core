@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "Asignar cajero";
+}
+@Html.ValidationSummary()
+<h2>Asignar Vendedor</h2>
+<form action="AsignacionVendedor" method="POST">
+    <div class="form-group mt-3">
+        <label for="idv" class="idv">Id vendedor</label>
+        <input type="number" class="form-control" id="idv"  name="VendedorId">
+    </div>
+    <div class="form-group">
+        <label for="sueldov" class="sueldov">Sueldo</label>
+        <input type="number" class="form-control" id="sueldov"  name="sueldo_base">
+    </div>
+    <div class="form-group">
+        <label for="ide" class="ide">Id empleado</label>
+        <input type="number" class="form-control" id="ide"  name="EmpleadoId">
+    </div>
+    <br>
+        <br>
+        <div class="form-group text-center">
+            <button class="btn btn-primary ingresar " style="width:170px " name="IngresarPuesto">Ingresar</button>
+        </div>
+</form>
