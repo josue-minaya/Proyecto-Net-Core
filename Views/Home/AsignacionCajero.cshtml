@@ -1,3 +1,4 @@
+@model Cajero
 @{
     ViewData["Title"] = "Asignar cajero";
 }
@@ -8,20 +9,20 @@
      
     <div class="form-group">
         <label for="idc" class="idc">Id cajero</label>
-        <input type="number" class="form-control" id="idc"  name="CajeroId">
+        <input type="number" class="form-control" id="idc"  asp-for="CajeroId">
     </div>
      <div class="form-group">
         <label for="numcaja" class="numcaja">N° caja</label>
-        <input type="number" class="form-control" id="numcaja"  name="numcaja">
+        <input type="number" class="form-control" id="numcaja"  asp-for="numcaja">
     </div>
     
     <div class="form-group">
         <label for="sueldo" class="sueldo">Sueldo</label>
-        <input type="number" class="form-control" id="sueldo"  name="sueldo">
+        <input type="number" class="form-control" id="sueldo"  asp-for="sueldo">
     </div>
     <div class="form-group">
         <label for="ide" class="ide">Id empleado</label>
-        <input type="number" class="form-control" id="ide"  name="EmpleadoId">
+        <input type="number" class="form-control" id="ide"  asp-for="EmpleadoId">
     </div>
         <br>
         <br>

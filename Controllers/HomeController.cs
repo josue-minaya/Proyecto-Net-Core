@@ -134,22 +134,11 @@ namespace Proyecto_Net_Core.Controllers
             var producto=_context.Producto.FirstOrDefault(q=>q.ProductoId==v.Id);           
             return View(producto);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-        public IActionResult Pedidos(ViewModel2 p)
+        public IActionResult Pedidos(ViewModel p)
         {
           
-            return View();
+             var producto=_context.Producto.FirstOrDefault(q=>q.ProductoId==p.Id);           
+            return View(producto);
         }
         
         public IActionResult OrdenesVenta(){

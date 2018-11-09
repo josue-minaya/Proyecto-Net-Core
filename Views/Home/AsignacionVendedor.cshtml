@@ -1,20 +1,21 @@
+@model Vendedor
 @{
     ViewData["Title"] = "Asignar cajero";
 }
 @Html.ValidationSummary()
 <h2>Asignar Vendedor</h2>
-<form asp-action="AsignacionVendedor" method="POST">
+<form asp-action="AsignacionVendedor" method="post">
     <div class="form-group mt-3">
         <label for="idv" class="idv">Id vendedor</label>
-        <input type="number" class="form-control" id="idv"  name="VendedorId">
+         <input type="number" class="form-control"  id="idv" asp-for="VendedorId" >
     </div>
     <div class="form-group">
         <label for="sueldov" class="sueldov">Sueldo</label>
-        <input type="number" class="form-control" id="sueldov"  name="sueldo_base">
+        <input type="number" class="form-control" id="sueldov"  asp-for="sueldo_base">
     </div>
     <div class="form-group">
         <label for="ide" class="ide">Id empleado</label>
-        <input type="number" class="form-control" id="ide"  name="EmpleadoId">
+        <input type="number" class="form-control" id="ide"  asp-for="EmpleadoId">
     </div>
     <br>
         <br>

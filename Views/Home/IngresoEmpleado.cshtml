@@ -1,3 +1,4 @@
+@model Empleado
 @{
     ViewData["Title"] = "Ingreso de empleados";
 }
@@ -10,23 +11,23 @@
      
      <div class="form-group">
         <label for="nombre" >Nombre</label>
-        <input type="text" class="form-control" id="nombre"  name="nombre">
+        <input type="text" class="form-control" id="nombre"  asp-for="nombre">
     </div>
     <div class="form-group">
         <label for="apellido" >Apeliido</label>
-        <input type="text" class="form-control" id="apellido"  name="apellido">
+        <input type="text" class="form-control" id="apellido"  asp-for="apellido">
     </div>
     <div class="form-group">
         <label for="dni" >DNI</label>
-        <input type="number" class="form-control" id="dni"  name="dni">
+        <input type="number" class="form-control" id="dni"  asp-for="dni">
     </div>
     <div class="form-group">
         <label for="direccion" >Direccion</label>
-        <input type="text" class="form-control" id="direccion"  name="direccion">
+        <input type="text" class="form-control" id="direccion"  asp-for="direccion">
     </div>        
     <div class="form-group">
         <label for="telefono" >Telefono</label>
-        <input type="number" class="form-control" id="telefono"  name="telefono">
+        <input type="number" class="form-control" id="telefono"  asp-for="telefono">
     </div>
     <div class="form-group">
             <label for="exampleFormControlSelect1">Puesto</label>

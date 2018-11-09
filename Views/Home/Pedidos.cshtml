@@ -1,11 +1,11 @@
-@model List<Producto>
+@model Producto
 @{
     ViewData["Title"] = "Pedidos";
 }
 @Html.ValidationSummary()
 <form class="formulario">
   <h5 class="text-left">Pedidos</h5>
-  <table>
+  <table class="table table-striped text-center">
      <thead>
         <tr>
           <th scope="col"class>#</th>
@@ -14,21 +14,19 @@
           <th scope="col"class>Cantidad</th>
        </tr>
     </thead>
-    @foreach(var productos in Model){
+    
       <tbody>
           <tr>
-            <td>@productos.foto</td>
             <td></td>
-            <td></td>
-            <td></td>
+            <td>@Model.ProductoId</td>
+            <td>@Model.precio</td>
+            <td>@Model.stock</td>
           </tr>
       </tbody>
-     
-    }
     
-    <div class="col">
+  </table>
+  <div >
         <br>
         <button class="btn btn-success text-center"  type="submit" name="Enviar">Enviar</button>
     </div>
-  </table>
 </form>

@@ -14,7 +14,7 @@ namespace Proyecto_Net_Core.Models
         [Required]
         public int stock { get; set; }
         [Required]
-        public float precio { get; set; }
+        public decimal precio { get; set; }
         
         public Categoria Categoria { get; set; }
         [Required]
