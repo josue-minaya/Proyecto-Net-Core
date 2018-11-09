@@ -6,7 +6,7 @@
 <div>
     <h1>Busqueda de Productos</h1>
     <form asp-action="DetalleProducto" method="GET" class="formulario">
-        <div class="form-group formulario">
+        <div class="form-group ">
             <label for="codigo">Codigo de producto</label>
             <input type="text" class="form-control" id="codigo"  name="Id">
         </div>
@@ -14,6 +14,9 @@
         
         <div class="form-group text-center">
             <button type="submit" class="btn btn-secondary" style="width:170px " name="IngresarProducto">Buscar</button>
+        </div>
+        <div class="form-group text-center">
+            <a href="~/Vendedor/Vendedor"type="submit" class="btn btn-secondary" style="width:170px " name="IngresarProducto">Regresar</a>
         </div>
     </form>
     

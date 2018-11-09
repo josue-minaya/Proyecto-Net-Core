@@ -10,12 +10,21 @@ using Proyecto_Net_Core.Models;
 
 namespace Proyecto_Net_Core.Controllers
 {
-    public class AdministradorController : Controller
+    public class CajeroController : Controller
     {
         private readonly VentasContext _context;
-        public AdministradorController(VentasContext context)
+        public CajeroController(VentasContext context)
         {
             this._context=context;
         }
+        public IActionResult Cajero()
+        {
+            
+            return View();
+        }
+        public IActionResult OrdenesVenta(){
+            return View();
+        }
+       
     }
 }

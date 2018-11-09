@@ -1,0 +1,57 @@
+@model Producto
+
+@{
+    ViewData["Title"] = "Pedidos";
+}
+@Html.ValidationSummary()
+<form class="formulario">
+  <h5 class="text-left">Pedidos</h5>
+  <table class="table table-striped text-center">
+     <thead>
+        <tr>
+          <th scope="col"class>#</th>
+          <th scope="col"class>Cod</th>
+          <th scope="col"class>Precio</th>
+          <th scope="col"class>Cantidad</th>
+       </tr>
+    </thead>
+    
+      <tbody>
+          <tr>
+            <td></td>
+            <td>@Model.ProductoId</td>
+            <td>@Model.precio</td>
+            <td> <div class="form-group">
+            
+            <select class="form-control" id="exampleFormControlSelect1" name="CategoriaId">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="3">4</option>
+                <option value="3">5</option>
+                <option value="3">6</option>
+                <option value="3">7</option>
+                <option value="3">8</option>
+                <option value="3">9</option>
+                <option value="3">10</option>
+                                
+            </select>
+            
+        </div></td>
+          </tr>
+      </tbody>
+    
+  </table>
+  <div class="form-group">
+        
+        <input type="text" class="form-control" id="nombre"  placeholder="Nombre" name="nombre">
+    </div>
+  <div class="text-center">
+        <br>
+        <button class="btn btn-success text-center"  type="submit" name="Enviar">Enviar</button>
+    </div>
+    <div class="text-center">
+        <br>
+        <a href="~/Vendedor/BusquedaProducto" class="btn btn-success text-center"  type="submit" >Agregar nuevo producto</a>
+    </div>
+</form>
