@@ -30,7 +30,7 @@ namespace Proyecto_Net_Core.Controllers
                            (e => e.EmpleadoId == emp.EmpleadoId 
                            && e.password == emp.password);
                 if(empleado==null){
-                    return RedirectToAction("IngresoProducto");  
+                    return RedirectToAction("Index");  
                 } else {
                      if(empleado.nombre_puesto=="Cajero"){
                         return RedirectToAction("IngresoProducto"); 
@@ -152,9 +152,13 @@ namespace Proyecto_Net_Core.Controllers
             return View();
         }
         
+        public IActionResult OrdenesVenta(){
+            return View();
+        }
        
-       
-        
+        public IActionResult Administrador(){
+            return View();
+        }
         
         
     }
