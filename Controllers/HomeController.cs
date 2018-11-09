@@ -34,7 +34,11 @@ namespace Proyecto_Net_Core.Controllers
                 } else {
                      if(empleado.nombre_puesto=="Cajero"){
                         return RedirectToAction("IngresoProducto"); 
-                    }  
+                     }  else if (empleado.nombre_puesto=="Vendedor") {
+                         return RedirectToAction("Pedidos"); 
+                     } else if (empleado.nombre_puesto=="Administrador") {
+                         return RedirectToAction("IngresoEmpleado");
+                     }
                 }  
             } 
             return View();
