@@ -3,10 +3,9 @@
     ViewData["Title"] = "Asignar cajero";
 }
 @Html.ValidationSummary()
-<h2>Asignar Cajero</h2>
-<form  class="formulario" asp-action="AsignacionCajero" method="POST">
-    
-     
+
+<form  class="weather-box" asp-action="AsignacionCajero" method="POST">
+    <h2>Asignar Cajero</h2>     
     <div class="form-group">
         <label for="idc" >Id cajero</label>
         <input type="number" class="form-control" id="idc"  asp-for="CajeroId">
