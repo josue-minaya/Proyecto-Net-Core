@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProyectoNetCore.Migrations
 {
-    public partial class creacion : Migration
+    public partial class db : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -47,7 +47,7 @@ namespace ProyectoNetCore.Migrations
                     foto = table.Column<string>(nullable: true),
                     especificaciones = table.Column<string>(nullable: false),
                     stock = table.Column<int>(nullable: false),
-                    precio = table.Column<float>(nullable: false),
+                    precio = table.Column<decimal>(nullable: false),
                     CategoriaId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -147,31 +147,6 @@ namespace ProyectoNetCore.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Pedido_Producto",
-                columns: table => new
-                {
-                    ProductoId = table.Column<string>(nullable: false),
-                    Pedido_encabezadoId = table.Column<int>(nullable: false),
-                    tipoc = table.Column<string>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Pedido_Producto", x => new { x.Pedido_encabezadoId, x.ProductoId });
-                    table.ForeignKey(
-                        name: "FK_Pedido_Producto_Pedido_encabezado_Pedido_encabezadoId",
-                        column: x => x.Pedido_encabezadoId,
-                        principalTable: "Pedido_encabezado",
-                        principalColumn: "Pedido_encabezadoId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Pedido_Producto_Producto_ProductoId",
-                        column: x => x.ProductoId,
-                        principalTable: "Producto",
-                        principalColumn: "ProductoId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Venta",
                 columns: table => new
                 {
@@ -199,15 +174,50 @@ namespace ProyectoNetCore.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.InsertData(
-                table: "Categoria",
-                columns: new[] { "CategoriaId", "nombre" },
-                values: new object[] { 1, "Refrigeradora" });
+            migrationBuilder.CreateTable(
+                name: "Pedido_Producto",
+                columns: table => new
+                {
+                    ProductoId = table.Column<string>(nullable: false),
+                    Pedido_cuerpoId = table.Column<int>(nullable: false),
+                    tipoc = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Pedido_Producto", x => new { x.Pedido_cuerpoId, x.ProductoId });
+                    table.ForeignKey(
+                        name: "FK_Pedido_Producto_Pedido_cuerpo_Pedido_cuerpoId",
+                        column: x => x.Pedido_cuerpoId,
+                        principalTable: "Pedido_cuerpo",
+                        principalColumn: "Pedido_cuerpoId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Pedido_Producto_Producto_ProductoId",
+                        column: x => x.ProductoId,
+                        principalTable: "Producto",
+                        principalColumn: "ProductoId",
+                        onDelete: ReferentialAction.Cascade);
+                });
 
             migrationBuilder.InsertData(
                 table: "Categoria",
                 columns: new[] { "CategoriaId", "nombre" },
-                values: new object[] { 2, "Cocina" });
+                values: new object[,]
+                {
+                    { 1, "Refrigeradora" },
+                    { 2, "Cocina" },
+                    { 3, "Microondas" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Empleado",
+                columns: new[] { "EmpleadoId", "apellido", "direccion", "dni", "nombre", "nombre_puesto", "password", "telefono" },
+                values: new object[,]
+                {
+                    { 1, "Perez", "Av. La fontana", 7541235, "Manuel", "Administrador", "12345", 957421454 },
+                    { 2, "Vasquez", "Av. La Molina", 4785478, "Juan", "Vendedor", "abcd", 954781256 },
+                    { 3, "Sanchez", "Av. aviacion", 5478547, "Tomas", "Cajero", "98765", 952147563 }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Cajero_EmpleadoId",
@@ -254,13 +264,13 @@ namespace ProyectoNetCore.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Pedido_cuerpo");
-
-            migrationBuilder.DropTable(
                 name: "Pedido_Producto");
 
             migrationBuilder.DropTable(
                 name: "Venta");
+
+            migrationBuilder.DropTable(
+                name: "Pedido_cuerpo");
 
             migrationBuilder.DropTable(
                 name: "Producto");

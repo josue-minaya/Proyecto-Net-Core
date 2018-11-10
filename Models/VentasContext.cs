@@ -46,6 +46,7 @@ namespace Proyecto_Net_Core.Models
                     direccion="Av. La fontana",
                     telefono=957421454,
                     nombre_puesto="Administrador",
+                    password="12345",
                 },
                 new Empleado{
                     EmpleadoId=2,
@@ -55,6 +56,7 @@ namespace Proyecto_Net_Core.Models
                     direccion="Av. La Molina",
                     telefono=954781256,
                     nombre_puesto="Vendedor",
+                    password="abcd",
                 },
                 new Empleado{
                     EmpleadoId=3,
@@ -64,6 +66,7 @@ namespace Proyecto_Net_Core.Models
                     direccion="Av. aviacion",
                     telefono=952147563,
                     nombre_puesto="Cajero",
+                    password="98765",
                 }
             );
             

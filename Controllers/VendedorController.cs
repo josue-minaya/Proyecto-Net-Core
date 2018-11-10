@@ -56,7 +56,10 @@ namespace Proyecto_Net_Core.Controllers
                 
             }
         
-            var producto=_context.Producto.FirstOrDefault(q=>q.ProductoId==v.Id);           
+            var producto=_context.Producto.FirstOrDefault(q=>q.ProductoId==v.Id);          
+            if(producto==null){
+                return RedirectToAction("BusquedaProducto");
+            } 
             return View(producto);
         }
         public IActionResult Pedidos(ViewModel p)

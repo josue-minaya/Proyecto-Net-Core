@@ -48,7 +48,8 @@ namespace ProyectoNetCore.Migrations
 
                     b.HasData(
                         new { CategoriaId = 1, nombre = "Refrigeradora" },
-                        new { CategoriaId = 2, nombre = "Cocina" }
+                        new { CategoriaId = 2, nombre = "Cocina" },
+                        new { CategoriaId = 3, nombre = "Microondas" }
                     );
                 });
 
@@ -79,6 +80,12 @@ namespace ProyectoNetCore.Migrations
                     b.HasKey("EmpleadoId");
 
                     b.ToTable("Empleado");
+
+                    b.HasData(
+                        new { EmpleadoId = 1, apellido = "Perez", direccion = "Av. La fontana", dni = 7541235, nombre = "Manuel", nombre_puesto = "Administrador", password = "12345", telefono = 957421454 },
+                        new { EmpleadoId = 2, apellido = "Vasquez", direccion = "Av. La Molina", dni = 4785478, nombre = "Juan", nombre_puesto = "Vendedor", password = "abcd", telefono = 954781256 },
+                        new { EmpleadoId = 3, apellido = "Sanchez", direccion = "Av. aviacion", dni = 5478547, nombre = "Tomas", nombre_puesto = "Cajero", password = "98765", telefono = 952147563 }
+                    );
                 });
 
             modelBuilder.Entity("Proyecto_Net_Core.Models.Pedido_cuerpo", b =>
@@ -126,14 +133,14 @@ namespace ProyectoNetCore.Migrations
 
             modelBuilder.Entity("Proyecto_Net_Core.Models.Pedido_Producto", b =>
                 {
-                    b.Property<int>("Pedido_encabezadoId");
+                    b.Property<int>("Pedido_cuerpoId");
 
                     b.Property<string>("ProductoId");
 
                     b.Property<string>("tipoc")
                         .IsRequired();
 
-                    b.HasKey("Pedido_encabezadoId", "ProductoId");
+                    b.HasKey("Pedido_cuerpoId", "ProductoId");
 
                     b.HasIndex("ProductoId");
 
@@ -152,7 +159,7 @@ namespace ProyectoNetCore.Migrations
 
                     b.Property<string>("foto");
 
-                    b.Property<float>("precio");
+                    b.Property<decimal>("precio");
 
                     b.Property<int>("stock");
 
@@ -229,9 +236,9 @@ namespace ProyectoNetCore.Migrations
 
             modelBuilder.Entity("Proyecto_Net_Core.Models.Pedido_Producto", b =>
                 {
-                    b.HasOne("Proyecto_Net_Core.Models.Pedido_encabezado", "Pedido_encabezado")
+                    b.HasOne("Proyecto_Net_Core.Models.Pedido_cuerpo", "Pedido_cuerpo")
                         .WithMany("Pedido_Productos")
-                        .HasForeignKey("Pedido_encabezadoId")
+                        .HasForeignKey("Pedido_cuerpoId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Proyecto_Net_Core.Models.Producto", "Producto")
