@@ -23,12 +23,12 @@ namespace Proyecto_Net_Core.Controllers
         }
         
         [HttpPost]
-         public IActionResult Index(Empleado emp)
+         public IActionResult Index(Login emp)
         {
             if (ModelState.IsValid) {
             var empleado = _context.Empleado.FirstOrDefault
-                           (e => e.EmpleadoId == emp.EmpleadoId 
-                           && e.password == emp.password);
+                           (e => e.EmpleadoId == emp.id 
+                           && e.password == emp.pass);
                 if(empleado==null){
                     return RedirectToAction("Index");  
                 } else {

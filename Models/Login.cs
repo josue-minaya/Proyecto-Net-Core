@@ -3,10 +3,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Proyecto_Net_Core.Models
 {
-    public class ViewModel2
+    public class Login
     {
         [Required]
-        public string id { get; set; }
-       
+        public int id { get; set; }
+        public string pass { get; set; }
+
     }
 }
