@@ -11,12 +11,12 @@ namespace Proyecto_Net_Core.Models
       
         protected override void OnModelCreating(ModelBuilder modelbuilder)
         {
-            modelbuilder.Entity<Pedido_Producto>().HasKey(pc=> new{pc.Pedido_encabezadoId,pc.ProductoId});
+            modelbuilder.Entity<Pedido_Producto>().HasKey(pc=> new{pc.Pedido_cuerpoId,pc.ProductoId});
             
             modelbuilder.Entity<Pedido_Producto>()
-            .HasOne(pc=>pc.Pedido_encabezado)
+            .HasOne(pc=>pc.Pedido_cuerpo)
             .WithMany(p=>p.Pedido_Productos)
-            .HasForeignKey(pc=>pc.Pedido_encabezadoId);
+            .HasForeignKey(pc=>pc.Pedido_cuerpoId);
 
             modelbuilder.Entity<Pedido_Producto>()
             .HasOne(pc=>pc.Producto)
@@ -31,6 +31,39 @@ namespace Proyecto_Net_Core.Models
                 new Categoria{
                     CategoriaId=2,
                     nombre="Cocina",
+                },
+                new Categoria{
+                    CategoriaId=3,
+                    nombre="Microondas",
+                }
+            );
+            modelbuilder.Entity<Empleado>().HasData(
+                new Empleado{
+                    EmpleadoId=1,
+                    nombre="Manuel",
+                    apellido="Perez",
+                    dni=7541235,
+                    direccion="Av. La fontana",
+                    telefono=957421454,
+                    nombre_puesto="Administrador",
+                },
+                new Empleado{
+                    EmpleadoId=2,
+                    nombre="Juan",
+                    apellido="Vasquez",
+                    dni=4785478,
+                    direccion="Av. La Molina",
+                    telefono=954781256,
+                    nombre_puesto="Vendedor",
+                },
+                new Empleado{
+                    EmpleadoId=3,
+                    nombre="Tomas",
+                    apellido="Sanchez",
+                    dni=5478547,
+                    direccion="Av. aviacion",
+                    telefono=952147563,
+                    nombre_puesto="Cajero",
                 }
             );
             
