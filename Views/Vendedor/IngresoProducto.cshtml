@@ -3,10 +3,9 @@
     ViewData["Title"] = "Ingreso de productos";
 }
 @Html.ValidationSummary()
-<h2>Ingrese producto</h2>
 <div>
-    <form  class="formulario" asp-action="IngresoProducto" method="POST">
-        
+    <form  class="formulario" asp-action="IngresoProducto" method="POST">        
+    <h2>Ingrese producto</h2>
         <div class="form-group">
             <label for="codigo" >Codigo</label>
             <input type="text" class="form-control" id="codigo"  asp-for="ProductoId">

@@ -3,8 +3,9 @@
     ViewData["Title"] = "Asignar cajero";
 }
 @Html.ValidationSummary()
-<h2>Asignar Vendedor</h2>
-<form class="formulario" asp-action="AsignacionVendedor" method="post">
+
+<form class="weather-box" asp-action="AsignacionVendedor" method="post">
+    <h2>Asignar Vendedor</h2>
     <div class="form-group mt-3">
         <label for="idv" class="idv">Id vendedor</label>
          <input type="number" class="form-control"  id="idv" asp-for="VendedorId" >

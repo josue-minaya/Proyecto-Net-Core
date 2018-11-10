@@ -33,11 +33,11 @@ namespace Proyecto_Net_Core.Controllers
                     return RedirectToAction("Index");  
                 } else {
                      if(empleado.nombre_puesto=="Cajero"){
-                        return RedirectToAction("IngresoProducto"); 
+                        return RedirectToAction("OrdenesVenta","Cajero"); 
                      }  else if (empleado.nombre_puesto=="Vendedor") {
-                         return RedirectToAction("Pedidos"); 
+                         return RedirectToAction("Vendedor","Vendedor"); 
                      } else if (empleado.nombre_puesto=="Administrador") {
-                         return RedirectToAction("IngresoEmpleado");
+                         return RedirectToAction("Administrador","Administrador");
                      }
                 }  
             } 
