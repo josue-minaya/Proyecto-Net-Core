@@ -18,6 +18,6 @@ namespace Proyecto_Net_Core.Models
         public int VendedorId { get; set; }
         public Venta Venta { get; set; }
         public List<Pedido_cuerpo> Pedido_cuerpos { get; set; }
-         public List<Pedido_Producto> Pedido_Productos { get; set; }
+        
     }
 }
