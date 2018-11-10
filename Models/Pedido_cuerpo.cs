@@ -17,6 +17,7 @@ namespace Proyecto_Net_Core.Models
         public Pedido_encabezado Pedido_encabezado { get; set; }
         [Required]
         public int Pedido_encabezadoId { get; set; }
+         public List<Pedido_Producto> Pedido_Productos { get; set; }
        
     }
 }
