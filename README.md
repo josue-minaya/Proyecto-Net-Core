@@ -37,7 +37,7 @@ La vista del cajero proporcionará a cada uno de estos trabajadores con una vist
 
 #### Ordenes de Venta
 1. Pedir al cliente sus datos
-1. Verificar que se encuentre dentro de los ultimos pedidos enviador por los vendedores
+1. Verificar que se encuentre dentro de los ultimos pedidos enviados por los vendedores
 1. Proceder con el cierre de la venta 
 
 ### Vendedor
