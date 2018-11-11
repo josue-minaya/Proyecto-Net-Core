@@ -1,12 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+using System.Web;
 using System.Linq;
-using System.Threading.Tasks;
+using System;
+
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using Proyecto_Net_Core.Models;
+using System.Collections.Generic;
 
 namespace Proyecto_Net_Core.Controllers
 {
@@ -19,7 +17,7 @@ namespace Proyecto_Net_Core.Controllers
         }
         public IActionResult Vendedor()
         {
-            
+    
             return View();
         }
         public IActionResult IngresoProducto()
@@ -69,5 +67,35 @@ namespace Proyecto_Net_Core.Controllers
             return View(producto);
         }
          
+         public IActionResult agregarcarrito(string Id)
+         {
+             
+             if (Session["carrito"]==null)
+             {
+              List<Carrito> compras=new List<Carrito>(); 
+              compras.Add( new Carrito(_context.Producto.Find(Id)));
+              Session["carrito"]=compras;
+              
+             }else{
+                List<Carrito> compras=(List<Carrito>)Session["carrito"];
+                compras.Add( new Carrito(_context.Producto.Find(Id)));
+                Session["carrito"]=compras;
+             } 
+             return View();
+         }
+         public IActionResult eliminar(string Id){
+               List<Carrito> compras=(List<Carrito>)Session["carrito"];
+               compras.RemoveAt(getIndex(Id));
+             return View("agregarcarrito");
+         }
+         public int getIndex(string Id){
+              List<Carrito> compras=(List<Carrito>)Session["carrito"];
+              for(int i=0;i<compras.Count;i++){
+                  if(compras[i].producto.ProductoId==Id){
+                      return i;
+                  }
+              }
+            return -1;
+        }
     }
 }
