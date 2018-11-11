@@ -19,8 +19,26 @@ La aplicación web recibirá a cada usuario con una pantalla de ingreso en el cu
 ### Administrador
 Las vistas de administrador proveen a cada miembro de su equipo con las funcionalidades de Ingreso de Empleado a la base de datos de la tienda. Esta sera diferenciada a manera de designación de roles con atributos específicos. De esta manera, un administrador ingresará a un empleado genérico, y luego pasará a darle el rol de cajero o vendedor. Una vez finalizado el llenado, un nuevo colaborador pasará a formar parte del equipo de la tienda. 
 
+#### Pantalla de Administrador
+1. Seleccionar la pantalla a la que se desea acceder
+
+#### Asignacion de Empleado
+1. Proceder a llenar los campos con la informacion adecuada del empleado
+1. Verificar la informacion previamente llenada
+1. Acabar dando clic en "Ingresar Empleado" para almacenar al nuevo colaborador en la base de datos de la tienda
+
+#### Asignacion de Vendedor y Asignacion de Cajero
+1. Completar todos los campos mostrados de acuerdo al rol del nuevo empleado
+1. Verificar la información a almacenar
+1. Clic en "Ingresar" para culminar con el proceso
+
 ### Cajero
 La vista del cajero proporcionará a cada uno de estos trabajadores con una vista especializada de las ventas por confirmar que serán escritas por los vendedores. Ante esto, los cajeros recibirán la información y procederán a cerrar la venta una vez el cliente a proporcionado sus datos. 
+
+#### Ordenes de Venta
+1. Pedir al cliente sus datos
+1. Verificar que se encuentre dentro de los ultimos pedidos enviador por los vendedores
+1. Proceder con el cierre de la venta 
 
 ### Vendedor
 En el caso de los vendedores, este tipo de trabajador posee la mayor cantidad de funcionalidades. Empezando por el ingreso de un nuevo producto, al cual debe colocarse todas sus especificaciones de acuerdo al modelo trabajado. Segundo, la parte de búsqueda de producto, en donde se rellena el campo de código de producto. Una vez completado, nos dirigirá a la vista de Detalle de Producto donde nos mostrará toda la información acerca de lo que se busca con el fin de informar adecuadamente al cliente en cuestión. Finalmente, en la parte de Pedidos es lo que actuará como un carrito de compras donde se almacenarán todos los productos deseados por el cliente a ser pasados al cajero para que este finalice la venta. Todo lo anterior dicho, ofrecido a través de enlances desde un vista general denominada Vendedor con un acceso a todas las demas funcionalidades que se le ofrece a este tipo de trabajador.
