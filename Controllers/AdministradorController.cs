@@ -64,8 +64,8 @@ namespace Proyecto_Net_Core.Controllers
             {
                 _context.Add(e);
                 _context.SaveChanges();
-                ViewBag.existe="Registro";
-                
+
+                return RedirectToAction("Administrador");                
             }
             return View(e);
         }
