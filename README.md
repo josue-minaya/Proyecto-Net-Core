@@ -8,8 +8,8 @@ PagoFácil
 Una aplicación web que agilice el proceso de compra en las sucursales de una tienda de electrodomésticos. Para esto, se dispondrá de una aplicación con interfaces específicas dirigida para el personal en caja y otra para los miembros del equipo de ventas. Con esto, se busca reducir el tiempo de espera del cliente al momento de cancelar los productos que desea llevar, los tiempos de cierre de venta para atender a nuevos clientes, mejor control de comisiones por vendedor, control de inventario en tiempo real, evitar los viajes a almacén, revisión eficiente de ventas logradas en diferentes periodos de tiempo y reducir costos invertidos en papel de impresión. 
 
 ## Autores
-Minaya, Josue
-Rodriguez, Jorge
+* Minaya, Josue
+* Rodriguez, Jorge
 
 ## Manual de Instalación y de Uso
 
