@@ -24,3 +24,18 @@ La vista del cajero proporcionará a cada uno de estos trabajadores con una vist
 
 ### Vendedor
 En el caso de los vendedores, este tipo de trabajador posee la mayor cantidad de funcionalidades. Empezando por el ingreso de un nuevo producto, al cual debe colocarse todas sus especificaciones de acuerdo al modelo trabajado. Segundo, la parte de búsqueda de producto, en donde se rellena el campo de código de producto. Una vez completado, nos dirigirá a la vista de Detalle de Producto donde nos mostrará toda la información acerca de lo que se busca con el fin de informar adecuadamente al cliente en cuestión. Finalmente, en la parte de Pedidos es lo que actuará como un carrito de compras donde se almacenarán todos los productos deseados por el cliente a ser pasados al cajero para que este finalice la venta. Todo lo anterior dicho, ofrecido a través de enlances desde un vista general denominada Vendedor con un acceso a todas las demas funcionalidades que se le ofrece a este tipo de trabajador.
+
+#### Ingreso de Producto
+1. Llene los campos de acuerdo lo pedido 
+1. Revise que se ha completado adecuadamente
+1. Clic en "Ingrese Producto" para culimnar con el proceso
+
+#### Búsqueda de Producto
+1. Digite el codigo del producto a buscar
+1. Clic en "Buscar" para culimnar con el proceso
+1. Clic en "Regresar" para salir de la pantalla
+
+#### Pedidos
+1. Verificar conformidad de los pedidos agendados
+1. Clic en "Seguir comprando" para agregar más productos
+1. Clic en "Finalizar" para enviar el pedido a cajero
