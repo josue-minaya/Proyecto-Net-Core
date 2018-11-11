@@ -1,10 +1,9 @@
 using System.Web;
 using System.Linq;
 using System;
-
 using Microsoft.AspNetCore.Mvc;
 using Proyecto_Net_Core.Models;
-using System.Collections.Generic;
+using System.Collections.Generic; 
 
 namespace Proyecto_Net_Core.Controllers
 {
