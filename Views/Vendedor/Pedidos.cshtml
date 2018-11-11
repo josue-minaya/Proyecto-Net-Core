@@ -1,4 +1,4 @@
-@model Producto
+
 
 @{
     ViewData["Title"] = "Pedidos";
@@ -9,7 +9,7 @@
   <table class="table table-striped text-center">
      <thead>
         <tr>
-          <th scope="col"class>#</th>
+          
           <th scope="col"class>Cod</th>
           <th scope="col"class>Precio</th>
           <th scope="col"class>Cantidad</th>
@@ -17,41 +17,55 @@
     </thead>
     
       <tbody>
-          <tr>
-            <td></td>
-            <td>@Model.ProductoId</td>
-            <td>@Model.precio</td>
-            <td> <div class="form-group">
-            
-            <select class="form-control" id="exampleFormControlSelect1" name="CategoriaId">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="3">4</option>
-                <option value="3">5</option>
-                <option value="3">6</option>
-                <option value="3">7</option>
-                <option value="3">8</option>
-                <option value="3">9</option>
-                <option value="3">10</option>
+          @{
+              float total=0.0f;
+          }
+        @if(Session["carrito"]!=null){
+            foreach(var item in Session["carrito"] as List<Proyecto_Net_Core.Models.Carrito>){
+                total+=(float)(@item.cantidad*@item.producto.precio);
+                <tr>
+
+                <td>@item.producto.ProductoId</td>
+                <td>@item.producto.precio</td>
+                <td>@item.producto.foto</td>
+                <td> <select class="form-control" id="exampleFormControlSelect1" name="cantidad">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="3">4</option>
+                            <option value="3">5</option>
+                            <option value="3">6</option>
+                            <option value="3">7</option>
+                            <option value="3">8</option>
+                            <option value="3">9</option>
+                            <option value="3">10</option>
                                 
-            </select>
-            
-        </div></td>
-          </tr>
-      </tbody>
-    
-  </table>
-  <div class="form-group">
-        
+                    </select>
+                </td>
+                <td>@item.cantidad*@item.producto.precio</td>
+                <td> @Html.ActionLink("Eliminar","eliminar","Vendedor",new{Id= Model.ProductoId},null)</td>
+         
+                </tr>
+              }
+          }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="4">Total</th>
+                <th>total</th>
+            </tr>
+        </tfoot>
+
+    </table>
+    <div class="form-group">
         <input type="text" class="form-control" id="nombre"  placeholder="Nombre" name="nombre">
-    </div>
-  <div class="text-center">
-        <br>
-        <button class="btn btn-success text-center"  type="submit" name="Enviar">Enviar</button>
     </div>
     <div class="text-center">
         <br>
-        <a href="~/Vendedor/BusquedaProducto" class="btn btn-success text-center"  type="submit" >Agregar nuevo producto</a>
+        <button class="btn btn-success text-center"  type="submit" name="Enviar">Finalizar compra</button>
+    </div>
+    <div class="text-center">
+        <br>
+        <a href="~/Vendedor/BusquedaProducto" class="btn btn-success text-center"  type="submit" >Seguir comprando</a>
     </div>
 </form>
