@@ -80,8 +80,8 @@ namespace Proyecto_Net_Core.Controllers
 
 
 
-
-         public IActionResult agregarcarrito(string Id)
+      
+         public IActionResult agregacarrito(string Id)
          {  
              // Leer de la sesion
             var carrito = JsonConvert.DeserializeObject(HttpContext.Session.GetString("carrito")) as List<Carrito>;
@@ -98,7 +98,7 @@ namespace Proyecto_Net_Core.Controllers
                 carrito.Add( new Carrito(_context.Producto.Find(Id)));
                 HttpContext.Session.SetString("carrito", JsonConvert.SerializeObject(carrito));
              } 
-             return View();
+             return RedirectToAction("Pedidos");
          }
 
 

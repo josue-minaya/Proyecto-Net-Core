@@ -1,3 +1,4 @@
+@model Producto
 @{
     ViewData["Title"] = "Pedidos";
     var carrito = (List<Carrito>)ViewBag.carrito;
@@ -27,20 +28,7 @@
                 <td>@item.producto.ProductoId</td>
                 <td>@item.producto.precio</td>
                 <td>@item.producto.foto</td>
-                <td> <select class="form-control" id="exampleFormControlSelect1" name="cantidad">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="3">4</option>
-                            <option value="3">5</option>
-                            <option value="3">6</option>
-                            <option value="3">7</option>
-                            <option value="3">8</option>
-                            <option value="3">9</option>
-                            <option value="3">10</option>
-                                
-                    </select>
-                </td>
+                
                 <td>@item.cantidad*@item.producto.precio</td>
                 <td> @Html.ActionLink("Eliminar","eliminar","Vendedor",new{Id= Model.ProductoId},null)</td>
          
