@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using System.Web;
 using System.Linq;
 using System;
-using Microsoft.AspNetCore.Mvc;
 using Proyecto_Net_Core.Models;
 using System.Collections.Generic;
 
@@ -67,28 +69,27 @@ namespace Proyecto_Net_Core.Controllers
         }
          
          public IActionResult agregarcarrito(string Id)
-         {
-             
-             if (Session["carrito"]==null)
+         {  
+             if (HttpContext.Session.("carrito")==null)
              {
               List<Carrito> compras=new List<Carrito>(); 
               compras.Add( new Carrito(_context.Producto.Find(Id)));
-              Session["carrito"]=compras;
+              HttpContext.Session.("carrito")=compras;
               
              }else{
-                List<Carrito> compras=(List<Carrito>)Session["carrito"];
+                List<Carrito> compras=(List<Carrito>)HttpContext.Session.("carrito");
                 compras.Add( new Carrito(_context.Producto.Find(Id)));
-                Session["carrito"]=compras;
+                HttpContext.Session.("carrito")=compras;
              } 
              return View();
          }
          public IActionResult eliminar(string Id){
-               List<Carrito> compras=(List<Carrito>)Session["carrito"];
+               List<Carrito> compras=(List<Carrito>)HttpContext.Session.("carrito");
                compras.RemoveAt(getIndex(Id));
              return View("agregarcarrito");
          }
          public int getIndex(string Id){
-              List<Carrito> compras=(List<Carrito>)Session["carrito"];
+              List<Carrito> compras=(List<Carrito>)HttpContext.Session.("carrito");
               for(int i=0;i<compras.Count;i++){
                   if(compras[i].producto.ProductoId==Id){
                       return i;
