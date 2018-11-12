@@ -36,8 +36,12 @@ namespace Proyecto_Net_Core
             services.AddDbContext<VentasContext>(options =>
             options.UseMySql(Configuration.GetConnectionString("Default")));
 
+            services.AddDistributedMemoryCache();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddSession();
 
+
+            
             services.AddMemoryCache();
 
             services.AddSession(options =>
@@ -47,8 +51,8 @@ namespace Proyecto_Net_Core
             options.Cookie.HttpOnly = true;
             });                        
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddSession();
+            
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

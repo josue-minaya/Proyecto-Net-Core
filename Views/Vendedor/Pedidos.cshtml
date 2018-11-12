@@ -1,7 +1,6 @@
-
-
 @{
     ViewData["Title"] = "Pedidos";
+    var carrito = (List<Carrito>)ViewBag.carrito;
 }
 @Html.ValidationSummary()
 <form class="formulario">
@@ -20,9 +19,9 @@
           @{
               float total=0.0f;
           }
-        @if(Session["carrito"]!=null){
-            foreach(var item in Session["carrito"] as List<Proyecto_Net_Core.Models.Carrito>){
-                total+=(float)(@item.cantidad*@item.producto.precio);
+ 
+            @foreach(var item in carrito){
+                total+=(float)(item.cantidad*item.producto.precio);
                 <tr>
 
                 <td>@item.producto.ProductoId</td>
@@ -47,7 +46,7 @@
          
                 </tr>
               }
-          }
+          
         </tbody>
         <tfoot>
             <tr>

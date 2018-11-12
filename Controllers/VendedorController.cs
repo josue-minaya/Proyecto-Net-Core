@@ -6,6 +6,7 @@ using System.Linq;
 using System;
 using Proyecto_Net_Core.Models;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Proyecto_Net_Core.Controllers
 {
@@ -63,33 +64,58 @@ namespace Proyecto_Net_Core.Controllers
         }
         public IActionResult Pedidos(ViewModel p)
         {
-          
+            var carrito = JsonConvert.DeserializeObject(HttpContext.Session.GetString("carrito")) as List<Carrito> ?? new List<Carrito>();
+
+            ViewBag.carrito = carrito;
+
              var producto=_context.Producto.FirstOrDefault(q=>q.ProductoId==p.Id);           
             return View(producto);
         }
          
+
+
+
+
+
+
+
+
+
          public IActionResult agregarcarrito(string Id)
          {  
-             if (HttpContext.Session.GetString("carrito")==null)
+             // Leer de la sesion
+            var carrito = JsonConvert.DeserializeObject(HttpContext.Session.GetString("carrito")) as List<Carrito>;
+
+             if (carrito == null)
              {
-              List<Carrito> compras=new List<Carrito>(); 
-              compras.Add( new Carrito(_context.Producto.Find(Id)));
-              HttpContext.Session.GetString("carrito")=compras;
+              List<Carrito> nuevoCarrito =new List<Carrito>(); 
+              nuevoCarrito.Add( new Carrito(_context.Producto.Find(Id)));
+
+              // Guardar sesion
+              HttpContext.Session.SetString("carrito", JsonConvert.SerializeObject(nuevoCarrito));
               
              }else{
-                List<Carrito> compras=(List<Carrito>)HttpContext.Session.("carrito");
-                compras.Add( new Carrito(_context.Producto.Find(Id)));
-                HttpContext.Session.("carrito")=compras;
+                carrito.Add( new Carrito(_context.Producto.Find(Id)));
+                HttpContext.Session.SetString("carrito", JsonConvert.SerializeObject(carrito));
              } 
              return View();
          }
+
+
+
+
+
+
+
+
+
          public IActionResult eliminar(string Id){
-               List<Carrito> compras=(List<Carrito>)HttpContext.Session.("carrito");
+               var compras = JsonConvert.DeserializeObject(HttpContext.Session.GetString("carrito")) as List<Carrito>;
                compras.RemoveAt(getIndex(Id));
              return View("agregarcarrito");
          }
          public int getIndex(string Id){
-              List<Carrito> compras=(List<Carrito>)HttpContext.Session.("carrito");
+              var compras = JsonConvert.DeserializeObject(HttpContext.Session.GetString("carrito")) as List<Carrito>;
               for(int i=0;i<compras.Count;i++){
                   if(compras[i].producto.ProductoId==Id){
                       return i;
