@@ -32,18 +32,20 @@ namespace Proyecto_Net_Core
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+            
+            services.AddDbContext<VentasContext>(options =>
+            options.UseMySql(Configuration.GetConnectionString("Default")));
 
-            services.AddDistributedMemoryCache();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddMemoryCache();
 
             services.AddSession(options =>
             {
             // Set a short timeout for easy testing.
             options.IdleTimeout = TimeSpan.FromSeconds(10);
             options.Cookie.HttpOnly = true;
-            });
-
-
-            services.AddDistributedMemoryCache();            
+            });                        
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSession();

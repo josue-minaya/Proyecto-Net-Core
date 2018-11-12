@@ -70,11 +70,11 @@ namespace Proyecto_Net_Core.Controllers
          
          public IActionResult agregarcarrito(string Id)
          {  
-             if (HttpContext.Session.("carrito")==null)
+             if (HttpContext.Session.GetString("carrito")==null)
              {
               List<Carrito> compras=new List<Carrito>(); 
               compras.Add( new Carrito(_context.Producto.Find(Id)));
-              HttpContext.Session.("carrito")=compras;
+              HttpContext.Session.GetString("carrito")=compras;
               
              }else{
                 List<Carrito> compras=(List<Carrito>)HttpContext.Session.("carrito");
