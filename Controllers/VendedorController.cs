@@ -81,7 +81,7 @@ namespace Proyecto_Net_Core.Controllers
 
 
       
-         public IActionResult agregacarrito(string Id)
+         public IActionResult agregacarrito(ViewModel Id)
          {  
              // Leer de la sesion
             var carrito = JsonConvert.DeserializeObject(HttpContext.Session.GetString("carrito")) as List<Carrito>;
