@@ -4,7 +4,7 @@
     ViewData["Title"] = "Detalle Producto";
 }
 @Html.ValidationSummary()
-    <form asp-action="agregacarrito" method="GET" class="formulario">
+    <form  method="GET" class="formulario">
         
             <div class="form-group">
             <label for="foto" >Datos del producto</label>
@@ -67,7 +67,7 @@
         
         
         <div class="form-group text-center ">
-           @Html.ActionLink("Agregar a acarrito","agregacarrito","Vendedor",new{Id= @Model.ProductoId},null)
+           @Html.ActionLink("Agregar a acarrito","Pedidos","Vendedor",new{Id= @Model.ProductoId},null)
         </div>
         <div class="form-group text-center">
             <a href="~/Vendedor/Pedidos"type="submit" class="btn btn-secondary" style="width:170px " name="IngresarProducto">Mostrar carrito</a>

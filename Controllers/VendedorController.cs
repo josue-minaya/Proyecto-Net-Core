@@ -62,14 +62,14 @@ namespace Proyecto_Net_Core.Controllers
             } 
             return View(producto);
         }
-        public IActionResult Pedidos(ViewModel p)
+        public IActionResult Pedidos()
         {
             var carrito = JsonConvert.DeserializeObject(HttpContext.Session.GetString("carrito")) as List<Carrito> ?? new List<Carrito>();
 
             ViewBag.carrito = carrito;
 
-             var producto=_context.Producto.FirstOrDefault(q=>q.ProductoId==p.Id);           
-            return View(producto);
+                   
+            return View();
         }
          
 
@@ -93,12 +93,13 @@ namespace Proyecto_Net_Core.Controllers
 
               // Guardar sesion
               HttpContext.Session.SetString("carrito", JsonConvert.SerializeObject(nuevoCarrito));
-              
+                
              }else{
                 carrito.Add( new Carrito(_context.Producto.Find(Id)));
                 HttpContext.Session.SetString("carrito", JsonConvert.SerializeObject(carrito));
+              
              } 
-             return RedirectToAction("Pedidos");
+            return RedirectToAction("Pedidos","Vendedor");
          }
 
 

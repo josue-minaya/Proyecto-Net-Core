@@ -22,8 +22,18 @@ namespace Proyecto_Net_Core.Controllers
             
             return View();
         }
-        public IActionResult OrdenesVenta(){
-            return View();
+        public IActionResult OrdenesVenta(string nombre){
+              if (!ModelState.IsValid)
+            {
+                return RedirectToAction("OrdenesVenta");
+                
+            }
+        
+            var lista=_context.Pedido_encabezado.FirstOrDefault(q=>q.nombre==nombre);          
+            if(lista==null){
+                return RedirectToAction("OrdenesVenta");
+            } 
+            return View(lista);
         }
        
     }

@@ -18,18 +18,18 @@
     
       <tbody>
           @{
-              float total=0.0f;
+              
           }
- 
+            
             @foreach(var item in carrito){
-                total+=(float)(item.cantidad*item.producto.precio);
+               
                 <tr>
 
                 <td>@item.producto.ProductoId</td>
                 <td>@item.producto.precio</td>
                 <td>@item.producto.foto</td>
                 
-                <td>@item.cantidad*@item.producto.precio</td>
+                <td>*@item.producto.precio</td>
                 <td> @Html.ActionLink("Eliminar","eliminar","Vendedor",new{Id= Model.ProductoId},null)</td>
          
                 </tr>

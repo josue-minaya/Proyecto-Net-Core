@@ -8,19 +8,15 @@ namespace Proyecto_Net_Core.Models
     {
         
         public Producto producto { get; set; }
-        public int cantidad { get; set; }
+        
 
-        public Carrito(Producto producto, int cantidad) 
+        public Carrito(Producto producto) 
         {
             this.producto = producto;
-            this.cantidad = cantidad;
+           
                
         }
-        public Carrito(Producto producto)
-        {
-            this.producto=producto;
-            
-        }
+        
         public Carrito(){
 
         }
