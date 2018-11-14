@@ -22,6 +22,10 @@ namespace Proyecto_Net_Core.Controllers
             
             return View();
         }
+        public IActionResult OrdenesVenta(){
+            return View();
+        }
+        [HttpPost]
         public IActionResult OrdenesVenta(string nombre){
               if (!ModelState.IsValid)
             {
